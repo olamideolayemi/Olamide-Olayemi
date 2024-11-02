@@ -4,5 +4,11 @@
 
 :root {
   min-height: 100vh;
-  background-image: url("https://static.vecteezy.com/system/resources/previews/015/882/420/non_2x/modern-minimalist-dark-blue-premium-abstract-background-with-luxury-geometric-dark-shape-exclusive-wallpaper-design-for-website-poster-brochure-presentation-free-vector.jpg");
+}
+
+.video-bg {
+  position: relative;
+  inset: 0;
+  width: 100%;
+  z-index: -1;
 }

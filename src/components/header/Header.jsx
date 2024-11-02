@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   Dialog,
   DialogPanel,
@@ -9,7 +9,7 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel
-} from "@headlessui/react"
+} from "@headlessui/react" 
 import {
   XMarkIcon,
   Bars3Icon,
@@ -21,7 +21,8 @@ import {
   PhoneIcon,
   PlayCircleIcon
 } from "@heroicons/react/20/solid"
-import logo from "../../assets/logo.png"
+import logo from "../../assets/OLAMIDE OLAYEMI LOGO.png"
+import { Link } from "react-router-dom"
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -35,18 +36,33 @@ const callsToAction = [
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => { 
+    const handleScroll = () => {
+      if (window.scrollY >  0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-white">
+    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white drop-shadow-md" : ""}`}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link to='/' className="-m-1.5 p-1.5">
             <span className="sr-only ">Krane Wealth Labs</span>
             <img
               src={logo}
               alt=""
               className="h-8 w-auto"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -79,10 +95,10 @@ const Header = () => {
                       <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-gray-900">
+                      <Link to={item.href} className="block font-semibold text-gray-900">
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -90,45 +106,45 @@ const Header = () => {
               </div>
               <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                 {callsToAction.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
                   >
                     <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </PopoverPanel>
           </Popover>
 
-          <a href="/about" className="text-sm/6 font-semibold text-gray-900">
+          <Link to='/about' className="text-sm/6 font-semibold text-gray-900" >
             About Us
-          </a>
-          <a href="/projects" className="text-sm/6 font-semibold text-gray-900">
+          </Link>
+          <Link to='/projects' className="text-sm/6 font-semibold text-gray-900" >
             Projects
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/contact" className="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
+          <Link to='/contact' className="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1" >
             Contact Us
             <PhoneIcon aria-hidden="true" className="h-5 w-5 text-gray-900" />
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
                 src={logo}
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -151,7 +167,7 @@ const Header = () => {
                       <DisclosureButton
                         key={item.name}
                         as="a"
-                        href={item.href}
+                        to={item.href}
                         className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
                       >
                         {item.name}
@@ -159,27 +175,27 @@ const Header = () => {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href="/about"
+                <Link
+                  to="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   About Us
-                </a>
-                <a
-                  href="/projects"
+                </Link>
+                <Link
+                  to="/projects"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Projects
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="-mx-3 rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 flex items-center gap-x-1"
                 >
                   Contact Us
                   <PhoneIcon aria-hidden="true" className="h-5 w-5 text-gray-900" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

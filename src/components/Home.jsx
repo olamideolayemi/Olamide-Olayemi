@@ -1,12 +1,14 @@
-import Header from "./header/Header"
+import HeroSection from "./hero/HeroSection"
+// import bg from "../assets/R (1).jpeg"
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <div className="bg-gray-light min-h-96 flex align-middle justify-center ">
-        Welcome To Krane Wealth Labs
-      </div>
+      {/* Hero Section */}
+      <HeroSection
+        title='Olamide Olayemi'
+        content={'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.'}
+      />
     </>
   )
 }

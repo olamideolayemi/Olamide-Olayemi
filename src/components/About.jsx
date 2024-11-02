@@ -1,10 +1,9 @@
-import Header from "./header/Header"
+import HeroSection from "./hero/HeroSection"
 
 const About = () => {
   return (
     <>
-    <Header />
-      <div>About</div>
+      <HeroSection title={'About Us'} />
     </>
   )
 }
