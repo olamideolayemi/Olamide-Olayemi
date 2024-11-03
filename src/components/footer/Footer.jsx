@@ -28,7 +28,7 @@ const Footer = () => {
   return (
     <footer className=" bg-white dark:bg-gray-dark">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3  ">
-        <small className="text-black dark:text-gray_text max-w-sm" >Designed from the mind 🧠 and coded in Visual Studio Code by yours truly. Built with React.js and Tailwind CSS, deployed with Vercel.</small>
+        <small className="text-black dark:text-gray_text max-w-sm" >Built from scratch with inspiration from external sources and coded in <span className="font-bold text-white "> Visual Studio Code </span> by yours truly. Built with <span className="font-bold text-white ">React.js</span> and <span className="font-bold text-white ">Tailwind CSS</span>, deployed with <span className="font-bold text-white ">Vercel</span>.</small>
 
         <div className="flex items-center space-x-4 dark:text-white">
           <button onClick={() => setTheme('light')} aria-label="Light mode">
