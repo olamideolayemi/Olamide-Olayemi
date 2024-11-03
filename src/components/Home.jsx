@@ -2,6 +2,9 @@
 
 import { FaGithub, FaInstagram, FaLinkedin, FaTelegram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
+import { projects } from "./projects/Project";
+import { experience } from "./experience/Experience";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -10,10 +13,10 @@ const Home = () => {
         <div className="mx-auto max-w-2xl py-36">
           <div className="text-left">
             <p className="text-balance text-4xl font-semibold tracking-tight text-black dark:text-gray_text sm:text-1xl">
-              Hi, I&apos;m Olamide Olayemi 👋,
+              Hi, I&apos;m Olamide Olayemi 👋
             </p>
             <p className="mt-3 text-pretty text-2xl font-semibold text-black dark:text-gray_text sm:text-1xl">
-              Senior Frontend Developer
+              Front-end Web Developer
             </p>
             <p className="mt-6 text-pretty max-w-sm text-md font-medium text-black dark:text-gray_text sm:text-1xl">
               I build pixel-perfect, engaging, and accessible digital experiences.
@@ -50,6 +53,92 @@ const Home = () => {
               If you&apos;re in search for someone to drive innovation and provide significant solutions, consider me. I&apos;m eager to work on web development and surveying projects.
             </p>
           </div>
+
+          {/* Experience Section */}
+          <div className="mx-auto max-w-2xl py-20">
+            <h1 className="font-bold dark:text-white mb-10">EXPERIENCE</h1>
+            <div className="space-y-5">
+              {experience.map((experience, index) => (
+                <div key={index} className="flex py-6 rounded-lg text-white">
+                  <div >
+                    < small className="text-nowrap text-black dark:text-gray_text text-xs">
+                      {experience.year}
+                    </small>
+                  </div>
+                  <div className="pl-10">
+                    <a
+                      href={experience.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" dark:hover:text-blue text-black dark:text-white inline-block"
+                    >
+                      <h3 className="text-1xl  font-bold">{experience.title} ↗</h3>
+                    </a>
+                    <p className="text-sm text-black dark:text-gray_text mt-1">{experience.role}</p>
+                    <p className="mt-2 text-black dark:text-gray_text text-sm">{experience.description}</p>
+                    <div className="mt-4 flex flex-wrap space-x-2">
+                      {experience.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="bg-blue px-3 py-1 text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <a
+                href="/olamide-olayemi-resume.pdf"
+                download="Olamide_Olayemi_Resume.pdf"
+                className=" dark:hover:text-blue text-black dark:text-gray_text hover:underline inline-block"
+              >
+                <h3 className="text-1xl  font-bold">View Full Résumé
+                  ↗</h3>
+              </a>
+            </div>
+          </div>
+
+          {/* Projects Section */}
+          <div className="mx-auto max-w-2xl py-20">
+            <h1 className="font-bold dark:text-white mb-10">PROJECTS</h1>
+            <div className="space-y-5">
+              {projects.map((project, index) => (
+                <div key={index} className="flex py-6 rounded-lg text-white">
+                  <div >
+                    <img
+                      src={project.imagePath} alt={project.title}
+                      className="rounded-md mb-4 max-w-[150px] hover:ring-2"
+                    />
+                  </div>
+                  <div className="pl-10">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" dark:hover:text-blue text-black dark:text-white inline-block"
+                    >
+                      <h3 className="text-1xl  font-bold">{project.title} ↗</h3>
+                    </a>
+                    <p className="mt-2 text-black dark:text-gray_text text-sm">{project.description}</p>
+                    <div className="mt-4 flex flex-wrap space-x-2">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="bg-blue px-3 py-1 text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <Link
+                to="/projects"
+                rel="noopener noreferrer"
+                className=" dark:hover:text-blue text-black dark:text-gray_text hover:underline inline-block"
+              >
+                <h3 className="text-1xl  font-bold">View Full Project Archive ➡</h3>
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </>
