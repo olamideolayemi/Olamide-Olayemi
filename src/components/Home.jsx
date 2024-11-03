@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6"
 const Home = () => {
   return (
     <>
-      <div className=" bg-white dark:bg-dark-blue relative px-6 pt-0 h-auto lg:px-8">
+      <div className="relative px-6 pt-0 h-auto lg:px-8 bg-white dark:bg-gradient-to-b dark:from-[#0f172a] dark:to-[#1e3850]">
         <div className="mx-auto max-w-2xl py-36">
           <div className="text-left">
             <p className="text-balance text-4xl font-semibold tracking-tight text-black dark:text-gray_text sm:text-1xl">
@@ -38,6 +38,7 @@ const Home = () => {
           </div>
 
           <div className="text-left mt-20">
+            <h1 className="font-bold dark:text-white">ABOUT</h1>
             <p className="mt-8 text-pretty text-md font-medium text-black dark:text-gray_text sm:text-1xl">
               A frontend developer / results-driven graduate of Surveying and Geo-Informatics with a passion for technology and a strong foundation in web development.
               Equipped with a diverse skill set combining expertise in surveying with advanced front-end development skills.

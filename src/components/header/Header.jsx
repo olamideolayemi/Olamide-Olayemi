@@ -9,7 +9,7 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel
-} from "@headlessui/react" 
+} from "@headlessui/react"
 import {
   XMarkIcon,
   Bars3Icon,
@@ -38,9 +38,9 @@ const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => { 
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >  0) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -52,7 +52,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white dark:bg-gray-dark drop-shadow-md" : ""}`}>
+    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white dark:bg-gray-dark drop-shadow-md dark:bg-opacity-95" : ""}`}>
       <nav aria-label="Global" className="mx-auto flex max-w-3xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link to='/' className="-m-1.5 p-1.5">
@@ -63,7 +63,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div className="hidden ">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -73,7 +73,7 @@ const Header = () => {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-6">
+        <PopoverGroup className="hidden">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-black dark:text-gray_text">
               Services
