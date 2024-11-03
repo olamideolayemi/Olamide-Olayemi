@@ -3,7 +3,9 @@ import HeroSection from "./hero/HeroSection"
 const Projects = () => {
   return (
     <>
-      <HeroSection title={'Our Projects'} />
+      <div className="min-h-lvh bg-dark-blue">
+        <HeroSection title={'All Projects will be availbable soon.'} />
+      </div>
     </>
   )
 }
