@@ -52,15 +52,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white drop-shadow-md" : ""}`}>
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white bg-opacity-10 dark:bg-gray-dark drop-shadow-md" : ""}`}>
+      <nav aria-label="Global" className="mx-auto flex max-w-3xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link to='/' className="-m-1.5 p-1.5">
-            <span className="sr-only ">Krane Wealth Labs</span>
             <img
               src={logo}
               alt=""
-              className="h-8 w-auto"
+              className="h-6 w-auto filter dark:invert dark:brightness-0 dark:sepia dark:saturate-100 dark:hue-rotate-[180deg]"
             />
           </Link>
         </div>
@@ -68,28 +67,28 @@ const Header = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray_text"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-6">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-black dark:text-gray_text">
               Services
-              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
+              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-black dark:text-gray_text" />
             </PopoverButton>
 
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white dark:bg-gray-dark shadow-lg ring-1 ring-vivid-cyan transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="p-4">
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 dark:text-gray_text text-sm/6 hover:bg-gray-50"
                   >
                     <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                       <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
@@ -119,19 +118,13 @@ const Header = () => {
             </PopoverPanel>
           </Popover>
 
-          <Link to='/about' className="text-sm/6 font-semibold text-gray-900" >
+          <Link to='/about' className="text-sm/6 font-semibold text-black dark:text-gray_text" >
             About Us
           </Link>
-          <Link to='/projects' className="text-sm/6 font-semibold text-gray-900" >
+          <Link to='/projects' className="text-sm/6 font-semibold text-black dark:text-gray_text" >
             Projects
           </Link>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to='/contact' className="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1" >
-            Contact Us
-            <PhoneIcon aria-hidden="true" className="h-5 w-5 text-gray-900" />
-          </Link>
-        </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
@@ -142,7 +135,7 @@ const Header = () => {
               <img
                 alt=""
                 src={logo}
-                className="h-8 w-auto"
+                className="h-6 w-auto"
               />
             </Link>
             <button
