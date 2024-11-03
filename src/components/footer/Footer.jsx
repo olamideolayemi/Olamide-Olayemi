@@ -27,10 +27,11 @@ const Footer = () => {
 
   return (
     <footer className=" bg-white dark:bg-gray-dark">
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-2 ">
-        <small className="text-black dark:text-gray_text " > © {new Date().getFullYear()} | Krane</small>
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3  ">
+        <small className="text-black dark:text-gray_text max-w-sm" >Designed from the mind 🧠 and coded in Visual Studio Code by yours truly. Built with React.js and Tailwind CSS, deployed with Vercel.</small>
+
         <div className="flex items-center space-x-4 dark:text-white">
-          <button onClick={() => setTheme('light')}  aria-label="Light mode">
+          <button onClick={() => setTheme('light')} aria-label="Light mode">
             <FaSun />
           </button>
           <button onClick={() => setTheme('dark')} aria-label="Dark mode">
@@ -40,6 +41,9 @@ const Footer = () => {
             <FaDesktop />
           </button>
         </div>
+      </div>
+      <div className="mx-auto max-w-3xl px-6 py-3 text-black dark:text-gray_text">
+        <small> © {new Date().getFullYear()} | Olamide Olayemi.</small>
       </div>
     </footer>
   )

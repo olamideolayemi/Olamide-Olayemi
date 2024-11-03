@@ -52,7 +52,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white bg-opacity-10 dark:bg-gray-dark drop-shadow-md" : ""}`}>
+    <header className={`fixed w-full z-10 ${isScrolled ? "bg-white dark:bg-gray-dark drop-shadow-md" : ""}`}>
       <nav aria-label="Global" className="mx-auto flex max-w-3xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link to='/' className="-m-1.5 p-1.5">
