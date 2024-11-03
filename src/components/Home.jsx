@@ -59,13 +59,13 @@ const Home = () => {
             <h1 className="font-bold dark:text-white mb-10">EXPERIENCE</h1>
             <div className="space-y-5">
               {experience.map((experience, index) => (
-                <div key={index} className="flex py-6 rounded-lg text-white">
-                  <div >
+                <div key={index} className="md:flex py-6 rounded-lg text-white">
+                  <div className="mb-2">
                     < small className="text-nowrap text-black dark:text-gray_text text-xs">
                       {experience.year}
                     </small>
                   </div>
-                  <div className="pl-10">
+                  <div className="md:pl-10 ">
                     <a
                       href={experience.url}
                       target="_blank"
@@ -102,14 +102,14 @@ const Home = () => {
             <h1 className="font-bold dark:text-white mb-10">PROJECTS</h1>
             <div className="space-y-5">
               {projects.map((project, index) => (
-                <div key={index} className="flex py-6 rounded-lg text-white">
+                <div key={index} className="md:flex py-6 rounded-lg text-white">
                   <div >
                     <img
                       src={project.imagePath} alt={project.title}
                       className="rounded-md mb-4 max-w-[150px] hover:ring-2"
                     />
                   </div>
-                  <div className="pl-10">
+                  <div className="md:pl-10">
                     <a
                       href={project.url}
                       target="_blank"
