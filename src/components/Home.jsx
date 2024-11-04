@@ -55,7 +55,7 @@ const Home = () => {
               Seeking a challenging role as a Front-end Developer where I can leverage my technical abilities and enthusiasm for creating innovative digital solutions to contribute effectively to a dynamic tech team.
             </p>
             <p className="mt-8 text-pretty text-md font-medium text-black dark:text-gray_text sm:text-1xl">
-              If you&apos;re in search for someone to drive innovation and provide significant solutions, consider me. I&apos;m eager to work on web development and surveying projects.
+              If you&apos;re in search for someone to drive innovation and provide significant solutions, consider me. I&apos;m eager to work on web development projects.
             </p>
           </div>
 
