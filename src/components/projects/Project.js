@@ -1,7 +1,7 @@
 // Project.js
 import bvs from "../../assets/projects/bvs.jpg";
 import rpr from "../../assets/projects/rpr.jpg";
-import ola from "../../assets/projects/olamideolayemi.jpg";
+import v1 from "../../assets/projects/olamideolayemi_v1.jpg";
 
 class Project {
   constructor(title, description, url, imagePath, tags) {
@@ -31,9 +31,9 @@ const projects = [
   new Project(
     "olamideolayemi (v1)",
     "My current portfolio site, built with love by yours truly, wink.",
-    "https://olamideolayemi.vercel.app",
-    ola, // Update with actual image paths
-    ["React", "Tailwind CSS"]
+    "https://olamideolayemi.github.io/Olamide-Olayemi-Portfolio/",
+    v1, // Update with actual image paths
+    ["HTML", "CSS", "JavaScript"]
   ),
   // Add more projects as needed
 ];
