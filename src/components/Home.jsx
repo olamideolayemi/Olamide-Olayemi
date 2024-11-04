@@ -11,13 +11,13 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <>
       <div className="relative px-6 pt-0 h-auto lg:px-8 bg-white dark:bg-gradient-to-b dark:from-[#0f172a] dark:to-[#1e3850]">
         <div className="mx-auto max-w-2xl py-36">
           <div className="text-left">
-            <p className="text-balance text-4xl font-semibold tracking-tight text-black dark:text-gray_text sm:text-1xl">
+            <p className="text-balance text-3xl md:text-4xl font-semibold tracking-tight text-black dark:text-gray_text sm:text-1xl">
               Hi, I&apos;m Olamide Olayemi 👋
             </p>
             <p className="mt-3 text-pretty text-2xl font-semibold text-black dark:text-gray_text sm:text-1xl">

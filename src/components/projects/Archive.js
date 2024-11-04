@@ -23,8 +23,8 @@ const archives = [
     ["Wordpress", "Woo-Commerce", "DIVI", "HTML", "CSS", "PHP", "J-Query"]
   ),
   new Archive(
-    "Talent Republic (update)",
-    "https://talentrepublic.org.ng",
+    "Talent Republic (upgrade)",
+    "https://staging.talentrepublic.org.ng",
     '2024',    
     ["Wordpress", "DIVI", "HTML", "CSS"]
   ),
