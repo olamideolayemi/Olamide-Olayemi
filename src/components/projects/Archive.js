@@ -38,13 +38,13 @@ const archives = [
     "333 Operations Admin Dashboard",
     "",
     '2024',
-    ["React", "Next.js", "TypeScript", "JavaScript", "Sass", "Tailwind"]
+    ["React", "Next.js", "Redux", "TypeScript", "JavaScript", "Sass", "Tailwind"]
   ),
   new Archive(
     "Browse Point Billing Admin Dashboard",
     "",
     '2024',
-    ["React", "JavaScript", "Sass",]
+    ["React", "Redux", "JavaScript", "Sass",]
   ),
   new Archive(
     "Biz Vital Signs",
