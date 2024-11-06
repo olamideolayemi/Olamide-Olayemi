@@ -1,0 +1,27 @@
+/* App.css */
+
+/* Glow effect only on screens 1024px and wider */
+@media (min-width: 1024px) {
+  .cursor-glow {
+    position: fixed;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(109, 179, 236, 0.123), transparent);
+    transition: transform 0.1s ease-out, background-color 0.3s;
+    z-index: 9999;
+    filter: blur(60px); /* Adds a soft blur effect */
+    animation: pulse 2s infinite alternate;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+}
